@@ -1,0 +1,62 @@
+menu "Broadcom BCM215XX Implementations"
+	depends on ARCH_BCM215XX
+
+comment "BCM215XX Core Type"
+
+choice
+	prompt "Silicon version selection in BCM21553 family of devices"
+	depends on ARCH_BCM215XX
+	default ARCH_BCM21553_A0
+
+config ARCH_BCM21553_A0
+	bool "BCM21553 A0 based system"
+
+config ARCH_BCM21553_B0
+	bool "BCM21553 B0 based system"
+
+endchoice
+
+comment "BCM21553 Board Type"
+
+choice
+       prompt "Board selection in BCM21553 family of devices"
+       depends on ARCH_BCM21553_A0 || ARCH_BCM21553_B0
+       default BOARD_ATHENARAY
+
+config BOARD_ATHENARAY
+	bool "Broadcom BCM21553 AthenaRay EDN10 development board"
+	help
+	  Configure this option to specify the whether the board used
+	  for development is a BCM21553 EDN10 AthenaRay.
+
+config BOARD_ATHENARAY_EDN20
+	bool "Broadcom BCM21553 AthenaRay EDN20 development board"
+	help
+	  Configure this option to specify the whether the board used
+	  for development is a BCM21553 EDN20 AthenaRay.
+
+config BOARD_THUNDERBIRD
+	bool "Broadcom BCM21553 Thunderbird board"
+	help
+	  Configure this option to specify the whether the used
+	  for development is a BCM21553 Thunderbird.
+
+config BOARD_THUNDERBIRD_EDN31
+	bool "Broadcom BCM21553 Thunderbird EDN31 board"
+	help
+	  Configure this option to specify the whether the used
+	  for development is a BCM21553 Thunderbird EDN31.
+
+endchoice
+
+config SDRAM_BASE_ADDR
+hex "SDRAM Base address"
+depends on ARCH_BCM215XX
+
+config BCM215XX_PM
+        bool "Enable Platform power management for BCM215XX platform"
+        depends on PM && ARCH_BCM215XX
+        help
+          Say Yes here to enable platform power management for BCM215XX platform
+
+endmenu

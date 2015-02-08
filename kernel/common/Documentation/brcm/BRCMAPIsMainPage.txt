@@ -1,0 +1,44 @@
+/**
+
+\mainpage Broadcom Proprietary API's
+@{
+
+Linux provides documentation on peripherals in the kernel/common/documentation directory.  
+Broadcom provides additional capability not explained in the Linux documentation.  This
+document explains that capability.
+	
+@section clockreleated Clock Related
+
+\li \ref ClockAPIGroup
+\li \ref Clock2157APIGroup	
+
+@section DMA DMA
+
+\li \ref DMADRVGroup
+
+@section GPIO GPIO
+
+Here is the GPIO API documentation provided with Linux: @subpage LinuxGPIO \n
+Here are the Broadcom extensions: \ref GPIOAPIGroup
+
+@section PMURelated PMU Related
+
+\li \ref PMAPIGroup
+\li \ref BCM59035CoreAPIGroup
+\li \ref BCM59035PowerAPIGroup
+
+@section WifiPMUEnum Wifi and PMU Enum Started
+
+The Wifi power on and power off routines are included in the board API group, together with
+a PMU Enum started routine.
+
+\li \ref BoardBravaAPIGroup
+	
+@}
+
+\page LinuxGPIO Linux GPIO
+@{
+\include gpio.txt
+@}
+
+*/

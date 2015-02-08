@@ -1,0 +1,14 @@
+config FB_BCM_116X
+        tristate "BCM 116X platform framebuffer support"
+        depends on FB_BCM && ARCH_BCM116X
+        default n
+
+config ENABLE_FPS
+        tristate "FPS readout support"
+        depends on FB_BCM
+        default n
+
+source "drivers/video/broadcom/dss/Kconfig"
+source "drivers/video/broadcom/displays/Kconfig"
+source "drivers/video/broadcom/hantro/memalloc_wrapper/Kconfig"
+source "drivers/video/broadcom/ge/gememalloc_wrapper/Kconfig"

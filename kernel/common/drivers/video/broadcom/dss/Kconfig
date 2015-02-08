@@ -1,0 +1,6 @@
+menuconfig BCM_DSS
+        bool "Broadcom Display Subsystem support (EXPERIMENTAL)"
+	default N
+        help
+          Broadcom Display Subsystem support.
+

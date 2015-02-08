@@ -1,0 +1,26 @@
+if PLAT_BCMAP
+
+choice
+	prompt "Broadcom Application Processor Family"
+	default ARCH_BCM116X
+
+config ARCH_BCM116X
+	select CPU_V6
+	select HAVE_CLK
+	select COMMON_CLKDEV
+        bool "Broadcom BCM116X Family"
+	help
+	  Support for Broadcom 116X based systems. This runs on the ARM11
+	  apps processor of the 116X and depends on a shared memory
+	  interface to the ARM9 modem processor which runs the baseband
+	  stack and controls some vital subsystems.
+
+endchoice
+
+config BCM_PWM_CORE
+	bool "Broadcom PWM Core"
+	help
+	  Enable Broadcom PWM core layer. This option is required for PWM device
+	  drivers and backlight drivers.
+endif
+

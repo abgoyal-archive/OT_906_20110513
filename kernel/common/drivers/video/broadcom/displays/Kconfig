@@ -1,0 +1,54 @@
+menu "Broadcom Display Device Drivers"
+
+config PANEL_MAGNA_D51E5TA7601
+        tristate "Magna TrulyHVGA LCD Panel with D51E5TA7601 controller"
+        default N
+        help
+          Magna TrulyHVGA LCD Panel with D51E5TA7601 controller
+
+config BCM_LCD_NT35582
+        tristate "LCD Panel- N35582 controller"
+        default N
+        help
+	  WVGA LCD panel (N35582 controller)
+
+config BCM_LCD_BTG222432
+        tristate "HYUNDAI BTG222432 LCD support"
+        depends on MACH_MARTINI || BOARD_BONDRAY || BOARD_EXPLORER
+        ---help---
+         Support for HYUNDAI BTG222432 LCD
+         Say Y here to enable HYUNDAI BTG222432 LCD driver
+         Say m to make it a loadable module
+
+config BCM_LCD_HX8352_DF2440V8
+    tristate "Wintek HX8352 DF2440V8 LCD support"
+    depends on BOARD_BRAVA || BOARD_BRAVA_EDN10
+    ---help---
+     Support for WINTEK HX8352 DF2440V8 LCD Driver
+     Say Y here to enable Wintek HX8352 DF2440V8 LCD driver
+     Say m to make it a loadable module
+
+config BCM_LCD_HX8347_TFT1P5158
+    tristate "Truely HX8347 TFT1P5158 LCD support"
+     default n
+    ---help---
+     Support for Truely HX8347 TFT1P5158 LCD Driver
+     Say Y here to enable Truely HX8347 TFT1P5158 LCD driver
+     Say m to make it a loadable module
+
+config BCM_LCD_SKIP_INIT
+    bool "Skip LCD controller and panel initialization"
+     default n
+    ---help---
+     Support for skipping LCD controller and panel initialization.
+     Say Y here if bootloader does the job of initialization
+
+
+config BCM_LCD_TE_ENABLE
+    tristate "BRCM LCD TE support"
+     default n
+    ---help---
+     Support for Tearing Effect in BRCM LCD Driver
+     Say Y here to enable Tearing Effect in BRCM LCD driver
+     Say m to make it a loadable module
+endmenu
